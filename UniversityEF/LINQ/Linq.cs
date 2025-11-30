@@ -42,7 +42,6 @@ namespace UniversityEF.LINQ
                 {
                     Console.WriteLine($"   Status: {attendance.Status}, Date: {attendance.ClassDate}");
                 }
-
                 Console.WriteLine("\n\n\n");
             }
         }
