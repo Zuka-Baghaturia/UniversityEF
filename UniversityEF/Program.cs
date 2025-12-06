@@ -107,7 +107,7 @@ class Program
                 Linq.FacultyStats();
                 break;
             default:
-                Console.WriteLine("Invalid choice. Please select a number between 1 and 6.");
+                Console.WriteLine("Invalid choice. Please select a number between 1 and 9.");
                 break;
         }
     }
