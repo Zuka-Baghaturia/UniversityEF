@@ -6,9 +6,9 @@ using UniversityEF.Models;
 
 class Program
 {
-    
 
-    static void ChooseMethod()
+
+    public static void ChooseMethod()
     {
         Console.WriteLine("\n\t\t\t\t\t       C# <Welcome To EF Core Project /> C#");
         Console.WriteLine();
@@ -30,19 +30,55 @@ class Program
         Console.WriteLine("\t\t\t\t\t\t<-------------------------------->\n");
         Console.Write("\t\t\t\t\t\t    Enter your choice (1-9): ");
 
-        
+
+
 
 
         string? choice = Console.ReadLine();
+
         switch (choice)
         {
             case "1":
                 Console.WriteLine();
+                Console.WriteLine("\t\t\t\t\t\t    <----------------------->");
+                Console.WriteLine("\t\t\t\t\t\t    <|  Which Read Method?  |>");
+                Console.WriteLine("\t\t\t\t\t\t    <|                      |>");
+                Console.WriteLine("\t\t\t\t\t\t    <|1. Read_Students      |>");
+                Console.WriteLine("\t\t\t\t\t\t    <|2. Read_Teachers      |>");
+                Console.WriteLine("\t\t\t\t\t\t    <|3. Read_Payments      |>");
+                Console.WriteLine("\t\t\t\t\t\t    <|4. Read_Attendances   |>");
+                Console.WriteLine("\t\t\t\t\t\t    <|5. Read_Exams         |>");
+                Console.WriteLine("\t\t\t\t\t\t    <----------------------->\n");
+                Console.Write("\t\t\t\t\t\t    Enter your choice (1-5): ");
+                string? readChoice = Console.ReadLine();
+
                 Console.WriteLine();
-                Console.WriteLine("\t\t\t\t\t\t\tMethod executed!");
+                Console.WriteLine();
+                Console.WriteLine("\t\t\t\t\t\t\t Method executed!");
                 Console.WriteLine();
                 Console.WriteLine();
-                READ_Method.ReadAllMethod();
+
+                switch (readChoice)
+                {
+                    case "1":
+                        READ_Method.ReadAllMethod();
+                        break;
+                    case "2":
+                        READ_Method.ReadTeacherMethod();
+                        break;
+                    case "3":
+                        READ_Method.ReadPaymentsMethod();
+                        break;
+                    case "4":
+                        READ_Method.ReadAttendanceMethod();
+                        break;
+                    case "5":
+                        READ_Method.ReadExamsMethod();
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice. Please select a number between 1 and 5.");
+                        break;
+                }
                 break;
             case "2":
                 CREATE_Method.CreateMethod();
@@ -78,21 +114,16 @@ class Program
 
 
 
-
-
-
-
-
-
-
-    static void Main()
-    {
-        Console.ForegroundColor = ConsoleColor.Blue;
-        Console.Clear();
-
-        ChooseMethod();
-    }
 }
+
+
+
+
+
+
+
+
+
 
 
 
