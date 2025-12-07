@@ -84,7 +84,44 @@ class Program
                 CREATE_Method.CreateMethod();
                 break;
             case "3":
-                UPDATE_Method.UpdateMethod();
+            
+                Console.WriteLine();
+                Console.WriteLine("\t\t\t\t\t\t    <-------------------------->");
+                Console.WriteLine("\t\t\t\t\t\t    <|  Which Update Method?  |>");
+                Console.WriteLine("\t\t\t\t\t\t    <|                        |>");
+                Console.WriteLine("\t\t\t\t\t\t    <|1. Update_Students      |>");
+                Console.WriteLine("\t\t\t\t\t\t    <|2. Update_Teachers      |>");
+                Console.WriteLine("\t\t\t\t\t\t    <|3. Update_Payments      |>");
+                Console.WriteLine("\t\t\t\t\t\t    <-------------------------->\n");
+                Console.Write("\t\t\t\t\t\t     Enter your choice (1-3): ");
+                string? updateChoice = Console.ReadLine();
+
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("\t\t\t\t\t\t\t Method executed!");
+                Console.WriteLine();
+                Console.WriteLine();
+
+                switch (updateChoice)
+                {
+                    case "1":
+                        UPDATE_Method.UpdateMethod();
+                        break;
+                    case "2":
+                        UPDATE_Method.UpdateTeacherMethod();
+                        break;
+                    case "3":
+                        UPDATE_Method.UpdatePaymentsMethod();
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice. Please select a number between 1 and 3.");
+                        break;
+                }
+
+
+
+
+
                 break;
             case "4":
                 DELETE_Method.DeleteMethod();

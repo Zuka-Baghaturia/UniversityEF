@@ -10,12 +10,10 @@ namespace UniversityEF.CRUD
     class UPDATE_Method
     {
 
-    /// <summary>
-    /// 
-    /// </summary>
+
+
         public static void UpdateMethod()
         {
-            // UPDATE     anaxlebs studentebs
 
             using var context = new UniversityContext();
 
@@ -28,5 +26,51 @@ namespace UniversityEF.CRUD
                 Console.WriteLine("Student updated!");
             }
         }
+
+
+
+        public static void UpdateTeacherMethod()
+        {
+            using var context = new UniversityContext();
+
+            var teacher = context.Teachers.FirstOrDefault(s => s.FirstName == "Nino");
+
+            if (teacher != null)
+            {
+                teacher.Age = 43;
+                context.SaveChanges();
+                Console.WriteLine("Teacher updated!");
+            }
+        }
+
+
+
+        
+
+        public static void UpdatePaymentsMethod()
+        {
+            using var context = new UniversityContext();
+
+            var payment = context.Payments.FirstOrDefault(s => s.StudentId == 5);
+
+            if (payment != null)
+            {
+                payment.Amount = 2000;
+                context.SaveChanges();
+                Console.WriteLine("Payment updated!");
+            }
+        }
+
+
     }
 }
+
+
+
+
+
+
+
+
+
+
